@@ -81,12 +81,11 @@
 !.config/pipewire/pipewire.conf.d/10-clock-rate.conf
 
 !/etc/
-!/etc/tlp.conf
 !/etc/keyd/
 !/etc/keyd/default.conf
 !/etc/systemd/
 !/etc/systemd/logind.conf.d/
-!/etc/systemd/logind.conf.d/custom.conf
+!/etc/systemd/logind.conf.d/logind_custom.conf
 
 !/boot/
 !/boot/loader/
