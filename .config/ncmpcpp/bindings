@@ -1,0 +1,19 @@
+# Down
+def_key "j"
+    scroll_down
+
+# Up
+def_key "k"
+    scroll_up
+
+# Left
+def_key "h"
+    previous_column
+def_key "h"
+    jump_to_parent_directory
+
+# Right
+def_key "l"
+    next_column
+def_key "l"
+    enter_directory

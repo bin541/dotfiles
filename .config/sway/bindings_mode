@@ -1,0 +1,49 @@
+mode "resize" {
+    bindsym $left resize shrink width 20px
+    bindsym $down resize grow height 20px
+    bindsym $up resize shrink height 20px
+    bindsym $right resize grow width 20px
+
+    bindsym Left resize shrink width 20px
+    bindsym Down resize grow height 20px
+    bindsym Up resize shrink height 20px
+    bindsym Right resize grow width 20px
+
+    bindsym Escape mode "default"
+}
+bindsym $mod+r mode "resize"
+
+mode "mouse" {
+    bindsym h seat * cursor move -20 0
+    bindsym j seat * cursor move 0 20
+    bindsym k seat * cursor move 0 -20
+    bindsym l seat * cursor move 20 0
+
+    bindsym Shift+h seat * cursor move -80 0
+    bindsym Shift+j seat * cursor move 0 80
+    bindsym Shift+k seat * cursor move 0 -80
+    bindsym Shift+l seat * cursor move 80 0
+
+    bindsym m     seat * cursor press button1; seat * cursor release button1
+    bindsym comma seat * cursor press button2; seat * cursor release button2
+    bindsym period seat * cursor press button3; seat * cursor release button3
+
+    bindsym v seat * cursor press button1
+    bindsym --release v seat * cursor release button1
+
+    bindsym u seat * cursor axis 0 -30
+    bindsym d seat * cursor axis 0 30
+    bindsym Shift+u seat * cursor axis -30 0
+    bindsym Shift+d seat * cursor axis 30 0
+
+    bindsym Escape mode "default"
+}
+bindsym $mod+m mode "mouse"
+
+mode "gaps" {
+    bindsym l gaps inner all plus 1
+    bindsym h gaps inner all minus 1
+
+    bindsym Escape mode "default"
+}
+bindsym $mod+g mode "gaps"

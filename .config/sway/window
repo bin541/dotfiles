@@ -1,0 +1,14 @@
+#gaps inner 3
+#gaps outer 0
+#smart_gaps on
+
+default_border pixel 2
+smart_borders  on
+
+client.focused           #ffffff #ffffff #000000 #ffffff #ffffff
+client.unfocused         #000000 #000000 #ffffff #000000 #000000
+#client.focused_inactive #00000000 #00000000 #888888 #00000000 #00000000
+
+for_window [shell=".*"] inhibit_idle fullscreen
+for_window [app_id="moe.launcher.an-anime-game-launcher"] floating enable
+for_window [app_id="moe.launcher.sleepy-launcher"] floating enable

@@ -1,0 +1,9 @@
+#output * bg #000000 solid_color
+output * bg ~/pic/art/520038ldsdl.jpg fill
+
+output eDP-1    pos 0 1080 mode 3200x2000@60Hz  scale 2 adaptive_sync on render_bit_depth 8
+output DP-1     pos 1920 0 mode 1920x1080@144Hz scale 1 adaptive_sync on render_bit_depth 8
+output HDMI-A-1 pos 0 0    mode 1920x1080@144Hz scale 1 adaptive_sync no render_bit_depth 8
+
+bindswitch --reload --locked lid:on  output $laptop disable
+bindswitch --reload --locked lid:off output $laptop enable

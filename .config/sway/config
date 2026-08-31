@@ -1,0 +1,11 @@
+include ${HOME}/.config/sway/variables
+include ${HOME}/.config/sway/bar
+include ${HOME}/.config/sway/bindings
+include ${HOME}/.config/sway/bindings_mode
+include ${HOME}/.config/sway/bindings_xf86
+include ${HOME}/.config/sway/exec
+include ${HOME}/.config/sway/input
+include ${HOME}/.config/sway/output
+include ${HOME}/.config/sway/window
+
+include /etc/sway/config.d/*

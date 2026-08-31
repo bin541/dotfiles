@@ -1,0 +1,17 @@
+anchor=top-right
+layer=overlay
+width=400
+height=200
+margin=12
+padding=12
+max-visible=3
+sort=-time
+
+font=monospace 12
+background-color=#000000cc
+text-color=#ffffffff
+border-size=2
+border-color=#ffffffff
+
+default-timeout=5000
+ignore-timeout=0

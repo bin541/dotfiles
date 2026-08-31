@@ -1,0 +1,14 @@
+set $mod     Mod4
+set $term    foot
+set $menu    wmenu-run -N "#000000" -S "#ffffff" -s "#000000"
+set $scs_dir ~/pic/scs
+set $wobsock $XDG_RUNTIME_DIR/wob.sock
+set $laptop  eDP-1
+
+set $left  h
+set $down  j
+set $up    k
+set $right l
+
+set $screenshot mkdir -p $scs_dir && grim $scs_dir/scs-full-$(date +"%Y-%m-%d-%H-%M-%S").png
+set $screenclip mkdir -p $scs_dir && slurp | grim -g - $scs_dir/scs-clip-$(date +"%Y-%m-%d-%H-%M-%S").png

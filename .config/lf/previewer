@@ -1,0 +1,55 @@
+#!/bin/sh
+# posix chafa poppler ffmpegthumbnailer
+
+file="$1"
+w="${2:-80}"
+h="${3:-24}"
+
+CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache}/lf"
+[ ! -d "$CACHE_DIR" ] && mkdir -p -m 700 "$CACHE_DIR"
+
+[ -L "$file" ] && file=$(realpath -q -- "$file")
+
+[ ! -r "$file" ] && { echo "Unreadable or missing file"; exit 1; }
+
+[ -d "$file" ] && exec ls -Ahlp --color=always -- "$file"
+
+mimeinfo=$(file -b --mime -- "$file" 2>/dev/null)
+mime="${mimeinfo%%;*}"
+encoding="${mimeinfo##*charset=}"
+
+case "$mime" in
+    image/*)
+        exec chafa -s "${w}x${h}" --format=sixel --animate=false -- "$file"
+        ;;
+    video/*|application/pdf)
+        mtime=$(stat -c "%Y" -- "$file" 2>/dev/null || echo 0)
+        
+        hash_out=$(printf "%s:%s" "$file" "$mtime" | sha256sum)
+        cache_key="${hash_out%% *}"
+        cache_file="$CACHE_DIR/${cache_key}.jpg"
+
+        if [ ! -f "$cache_file" ]; then
+            if [ "$mime" = "application/pdf" ]; then
+                pdftoppm -jpeg -singlefile -f 1 -l 1 -scale-to-x 800 -- "$file" "${cache_file%.jpg}" 2>/dev/null
+            else
+                ffmpegthumbnailer -i "$file" -o "$cache_file" -c jpeg -s 800 -q 5 2>/dev/null
+            fi
+        fi
+
+        [ -f "$cache_file" ] && exec chafa -s "${w}x${h}" --format=sixel --animate=false -- "$cache_file"
+        exit 0
+        ;;
+    application/vnd.openxmlformats-*|application/vnd.oasis.*|application/rtf|application/epub+zip)
+        if command -v pandoc >/dev/null 2>&1; then
+            pandoc -t plain -- "$file" 2>/dev/null | expand | fold -w "$w" | head -n "$h"
+            exit 0
+        fi
+        ;;
+esac
+
+if [ "${mime%%/*}" = "audio" ] || [ "$encoding" = "binary" ] || [ "$mime" = "application/octet-stream" ]; then
+    file -b -- "$file" | expand | fold -w "$w" | head -n "$h"
+else
+    expand -- "$file" | fold -w "$w" | head -n "$h"
+fi

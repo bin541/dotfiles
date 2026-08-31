@@ -1,0 +1,16 @@
+bar {
+    status_command i3status-rs
+    position top
+#    height 24
+    workspace_min_width 24px
+    tray_output none
+    modifier alt+shift
+    colors {
+#        statusline #ffffff
+#        separator  #414868
+        focused_workspace  #ffffff #ffffff #000000
+        active_workspace   #000000 #000000 #4c7899
+        inactive_workspace #000000 #000000 #7c7c7c
+        urgent_workspace   #ffffff #f7768e #000000
+    }
+}

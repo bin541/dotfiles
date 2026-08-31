@@ -1,0 +1,9 @@
+map a push :mkdir<space>
+
+map f push :touch<space>
+
+map o push :ouch_compress<space>
+
+map u ouch_decompress
+
+map xY %rm -rf $fx

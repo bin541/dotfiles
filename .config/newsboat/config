@@ -1,0 +1,28 @@
+# standard color: black,red,green,yellow,blue,magenta,cyan,white,default
+
+color background default default
+
+color listnormal color250 default
+
+color listfocus black cyan
+
+color listnormal_unread cyan default
+
+color listfocus_unread black cyan bold
+
+color title white default bold
+
+color info white default bold
+color hint-key cyan default
+color hint-keys-delimiter white default
+color hint-separator default default
+color hint-description white default
+
+color article color250 default
+
+unbind-key j
+unbind-key k
+unbind-key l
+bind j feedlist,articlelist down
+bind k feedlist,articlelist up
+bind l articlelist open

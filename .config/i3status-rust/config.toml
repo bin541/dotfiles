@@ -1,0 +1,170 @@
+# icons ttf-nerd-fonts-symbols-mono
+
+[theme.overrides]
+separator = " "
+
+[icons]
+icons = "material-nf"
+
+[icons.overrides]
+uptime = "󱡧"
+thermometer = ""
+cpu = ""
+memory_mem = ""
+microphone = ""
+microphone_muted = "󰍭"
+volume = ""
+volume_muted = ""
+backlight = ""
+headphones = "󰂯󰋋"
+keyboard = "󰂯󰌌"
+mouse = "󰂯"
+joystick = "󰂯󰊴"
+net_wireless = ""
+net_wired = "󰈀"
+
+[[block]]
+block = "custom"
+format = "[󰎆$text.pango-str()]"
+command = "sh -c 's=$(mpc --format \"[[%title% - ]%artist%]|[%name%]\" current); [ -n \"$s\" ] && { [ ${#s} -gt 20 ] && echo \"${s:0:20}...\" || echo \"$s\"; }'"
+hide_when_empty = true
+interval = 5
+
+[[block]]
+block = "battery"
+format = "[$icon$percentage]"
+full_format = "[$percentage]"
+not_charging_format = "[$percentage]"
+missing_format = "[BAT ERRO]"
+full_threshold = 100
+warning = 20
+critical = 0
+[block.theme_overrides]
+good_fg = { link = "idle_fg" }
+info_fg = { link = "idle_fg" }
+
+[[block]]
+block = "uptime"
+format = "[$icon$text]"
+
+[[block]]
+block = "temperature"
+format = "[$icon$max]"
+
+[[block]]
+block = "cpu"
+format = "[$icon$utilization]"
+
+[[block]]
+block = "memory"
+format = "[$icon$mem_used_percents]"
+
+[[block]]
+block = "sound"
+device_kind = "source"
+format = "[$icon{$volume|}]"
+[[block.click]]
+button = "left"
+action = "toggle_mute"
+[[block.click]]
+button = "right"
+cmd = "true"
+
+[[block]]
+block = "sound"
+format = "[$icon{$volume|}]"
+[[block.click]]
+button = "left"
+action = "toggle_mute"
+[[block.click]]
+button = "right"
+cmd = "true"
+
+# keyboard
+[[block]]
+block = "bluetooth"
+mac = "D1:3E:38:35:09:40"
+format = "[$icon{$percentage|}]"
+disconnected_format = ""
+[block.battery_state]
+"0..20" = "warning"
+"21..100" = "idle"
+[[block.click]]
+button = "right"
+cmd = "true"
+
+# mouse
+[[block]]
+block = "bluetooth"
+mac = "F5:BC:6A:29:AF:38"
+format = "[$icon{$percentage|}]"
+disconnected_format = ""
+[block.battery_state]
+"0..20" = "warning"
+"21..100" = "idle"
+[[block.click]]
+button = "right"
+cmd = "true"
+
+# headphones
+[[block]]
+block = "bluetooth"
+mac = "25:07:01:B6:B5:52"
+format = "[$icon{$percentage|}]"
+disconnected_format = ""
+[block.battery_state]
+"0..20" = "warning"
+"21..100" = "idle"
+[[block.click]]
+button = "right"
+cmd = "true"
+
+# joystick
+[[block]]
+block = "bluetooth"
+mac = "C9:F0:0E:D7:FC:9F"
+format = "[$icon{$percentage|}]"
+disconnected_format = ""
+[block.battery_state]
+"0..20" = "warning"
+"21..100" = "idle"
+[[block.click]]
+button = "right"
+cmd = "true"
+
+# phone
+[[block]]
+block = "bluetooth"
+mac = ""
+format = "[$icon{$percentage|}]"
+disconnected_format = ""
+[block.battery_state]
+"0..20" = "warning"
+"21..100" = "idle"
+[[block.click]]
+button = "right"
+cmd = "true"
+
+[[block]]
+block = "backlight"
+format = "[$icon$brightness]"
+[[block.click]]
+button = "left"
+cmd = "true"
+
+[[block]]
+block = "net"
+device = "^(wl|wlan).*"
+format = "[$icon{$signal_strength}]"
+inactive_format = ""
+interval = 5
+
+[[block]]
+block = "net"
+device = "^(en|eth).*"
+format = "[$icon]"
+missing_format = ""
+
+[[block]]
+block = "time"
+format = "[$icon$timestamp.datetime(f:'%a %m-%d %R')]"

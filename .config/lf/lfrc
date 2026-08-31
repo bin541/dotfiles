@@ -1,0 +1,12 @@
+source ~/.config/lf/commands
+source ~/.config/lf/bindings
+
+set previewer ~/.config/lf/previewer
+
+set ifs "\n"
+
+set period 1
+set drawbox
+set icons  true
+set hidden true
+set timefmt "2006-01-02 15:04"

@@ -1,0 +1,121 @@
+# icons ttf-nerd-fonts-symbols-mono 
+
+di                  
+fi                  
+ln                  
+or                  
+ex                  
+pi                  󰈲
+so                  󰒄
+bd                  󰟟
+cd                  󰟟
+
+~/.bashrc           
+~/.bash_profile     
+~/.bash_alias       
+~/.config           
+~/.gnupg            󰌋
+~/.ssh              󰌋
+~/.git              󰊢
+~/.gitignore        󰊢
+~/.gitconfig        󰊢
+
+Makefile            
+Dockerfile          
+docker-compose.yml  
+LICENSE             󰿃
+Cargo.toml          
+package.json        
+go.mod              
+go.sum              
+
+*.gpg               󰌋
+*.pgp               󰌋
+*.pem               󰌋
+*.pub               󰌋
+*.key               󰌋
+*.crt               󰌋
+
+*.git               󰊢
+*.c                 
+*.h                 
+*.cpp               
+*.hpp               
+*.rs                
+*.go                
+*.py                
+*.pyc               󰆧
+*.sh                
+*.bash              
+*.zsh               
+*.js                
+*.jsx               
+*.ts                
+*.tsx               
+*.html              
+*.css               
+*.scss              
+*.lua               
+*.java              
+*.class             
+*.php               
+*.rb                
+*.vim               
+*.swift             
+*.kt                
+
+*.json              
+*.xml               󰗀
+*.yaml              
+*.yml               
+*.toml              
+*.ini               
+*.conf              
+*.sql               
+*.db                
+*.sqlit             
+*.csv               
+
+*.jpg               
+*.jpeg              
+*.png               
+*.gif               
+*.svg               󰜡
+*.webp              
+*.ico               
+*.mp3               󰎆
+*.wav               󰎆
+*.flac              󰎆
+*.m4a               󰎆
+*.ogg               󰎆
+*.mp4               
+*.mkv               
+*.avi               
+*.mov               
+*.webm              
+
+*.txt               
+*.md                
+*.pdf               
+*.doc               
+*.docx              
+*.xls               
+*.xlsx              
+*.ppt               
+*.pptx              
+*.epub              
+
+*.zip               
+*.tar               
+*.gz                
+*.bz2               
+*.xz                
+*.rar               
+*.7z                
+*.tgz               
+*.iso               󰗮
+*.img               󰋊
+
+*.apk               
+*.pkg.tar.zst       
+PKGBUILD            

@@ -1,0 +1,17 @@
+cmd mkdir %{{
+    IFS=' '
+    mkdir -p "$*"
+}}
+
+cmd touch %{{
+    IFS=' '
+    touch "$*"
+}}
+
+cmd ouch_compress %{{
+    ARCHIVE_NAME=$(IFS=' '; echo "$*")
+    
+    ouch compress $fx "$ARCHIVE_NAME"
+}}
+
+cmd ouch_decompress %ouch decompress $fx

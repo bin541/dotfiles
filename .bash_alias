@@ -1,0 +1,26 @@
+# ~/.bash_alias
+
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+
+alias vim='nvim'
+
+alias gb="git branch"
+alias gs="git status"
+alias gl="git log --graph --all --abbrev-commit"
+alias ga="git add"
+alias gm="git commit -m"
+alias gp="git push"
+alias gr="git reset HEAD~1"
+alias gpf="git push origin -f"
+
+alias c="clear"
+alias ~="cd ~"
+alias dot="cd /home/rix/pro/dot/ && ls -la"
+
+alias ll="ls -l"
+alias sb="source .bashrc"
+
+alias ai="ollama run deepseek-r1:14b"
+
+alias os="fastfetch"
