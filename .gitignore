@@ -20,6 +20,9 @@
 !#.gnupg/
 !#.gnupg/gpg-agent.conf
 
+!#.ssh/
+!#.ssh/config
+
 !.config/
 
 !.config/#mimeapps.list
