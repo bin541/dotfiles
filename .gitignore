@@ -83,6 +83,10 @@
 !.config/pipewire/pipewire.conf.d
 !.config/pipewire/pipewire.conf.d/10-clock-rate.conf
 
+!.config/wireplumber/
+!.config/wireplumber/wireplumber.conf.d/
+!.config/wireplumber/wireplumber.conf.d/10-bluetooth-audio.conf
+
 !/etc/
 !/etc/keyd/
 !/etc/keyd/default.conf
