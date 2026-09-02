@@ -94,6 +94,9 @@
 !/etc/systemd/logind.conf.d/
 !/etc/systemd/logind.conf.d/logind_custom.conf
 
+!/etc/tlp.d/
+!/etc/tlp.d/tlp_custom.conf
+
 !/boot/
 !/boot/loader/
 !/boot/loader/loader.conf
