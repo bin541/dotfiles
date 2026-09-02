@@ -7,12 +7,12 @@
 !README_zh.md
 !arch_install.md
 !arch_install_zh.md
+!pkgs.list
 
 !.gitignore
 !.bash_profile
 !.bashrc
 !.bash_alias
-!.pkgs.list
 
 !/img/
 !/img/scs-full-2026-08-31-10-01-11.png
