@@ -3,6 +3,6 @@
 image/gif=swayimg.desktop
 image/jpeg=swayimg.desktop
 image/png=swayimg.desktop
-image/webp=swayimg.desktop
-x-scheme-handler/discord-1216669957799018608=discord-1216669957799018608.desktop
 audio/flac=mpv.desktop
+x-scheme-handler/discord-1216669957799018608=discord-1216669957799018608.desktop
+video/mp4=mpv.desktop
