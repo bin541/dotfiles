@@ -10,5 +10,7 @@ client.unfocused         #000000 #000000 #ffffff #000000 #000000
 #client.focused_inactive #00000000 #00000000 #888888 #00000000 #00000000
 
 for_window [shell=".*"] inhibit_idle fullscreen
-for_window [app_id="moe.launcher.an-anime-game-launcher"] floating enable
+for_window [app_id="moe.launcher.an-anime-game-launcher"] floating enable 
 for_window [app_id="moe.launcher.sleepy-launcher"] floating enable
+for_window [app_id="info.cemu.Cemu"] floating enable
+for_window [app_id="org.prismlauncher.PrismLauncher"] floating enable

@@ -22,6 +22,7 @@ firefox
 flatpak
 foot
 git
+glmark2
 grim
 i3status-rust
 keyd
@@ -49,6 +50,7 @@ noto-fonts-cjk
 noto-fonts-emoji
 nwg-look
 ollama
+openai-codex
 openssh
 opentabletdriver-git
 ouch
@@ -62,16 +64,17 @@ scrcpy
 slurp
 smartmontools
 stow
+stress-ng
 sway
 swaybg
 swayidle
 swayimg
 swaylock
-tlp
 tree
 ttf-nerd-fonts-symbols-mono
 ttyper
 ufw
+usbutils
 virt-manager
 w3m
 wf-recorder
@@ -79,6 +82,7 @@ wiremix
 wl-clipboard
 wmenu
 wob
+xdg-desktop-portal-gtk
+xdg-desktop-portal-wlr
 xdg-user-dirs
 xorg-xwayland
-xpadneo-dkms
