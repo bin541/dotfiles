@@ -22,7 +22,6 @@ firefox
 flatpak
 foot
 git
-glmark2
 grim
 i3status-rust
 keyd
@@ -64,12 +63,12 @@ scrcpy
 slurp
 smartmontools
 stow
-stress-ng
 sway
 swaybg
 swayidle
 swayimg
 swaylock
+tlp
 tree
 ttf-nerd-fonts-symbols-mono
 ttyper
