@@ -1,6 +1,6 @@
 set $mod     Mod4
 set $term    foot
-set $menu    wmenu-run -N "#000000" -S "#ffffff" -s "#000000"
+set $menu    wmenu-run -b -N "#000000" -S "#ffffff" -s "#000000"
 set $scs_dir ~/pic/scs
 set $wobsock $XDG_RUNTIME_DIR/wob.sock
 set $laptop  eDP-1

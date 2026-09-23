@@ -22,7 +22,7 @@ You can refer to my Arch Linux [installation](./arch_install.md) habits
 ```sh
 # Check pkglist.txt within the repository to view my installed software
 # Redirect pkglist.txt into pacman to install the listed packages
-pacman -S --needed - < pkglist.txt
+pacman -S --needed - < pkgs.list
 ```
 
 ## How to Use?

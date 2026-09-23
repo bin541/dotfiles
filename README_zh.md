@@ -22,7 +22,7 @@
 ```sh
 # 查看仓库内pkglist.txt文件了解我使用的软件
 # 将pkglist.txt输入重定向至pacman可安装列表中的软件
-pacman -S --needed - < pkglist.txt
+pacman -S --needed - < pkgs.list
 ```
 
 ## 如何使用？

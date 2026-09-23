@@ -81,11 +81,11 @@
 
 !.config/pipewire/
 !.config/pipewire/pipewire.conf.d
-!.config/pipewire/pipewire.conf.d/10-clock-rate.conf
+!.config/pipewire/pipewire.conf.d/clock-rate.conf
 
 !.config/wireplumber/
 !.config/wireplumber/wireplumber.conf.d/
-!.config/wireplumber/wireplumber.conf.d/10-bluetooth-audio.conf
+!.config/wireplumber/wireplumber.conf.d/bluetooth-rate.conf
 
 !/etc/
 !/etc/keyd/

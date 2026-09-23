@@ -53,6 +53,8 @@ openai-codex
 openssh
 opentabletdriver-git
 ouch
+paru
+payload-dumper-go
 pipewire-pulse
 poppler
 qemu-base
@@ -68,6 +70,7 @@ swaybg
 swayidle
 swayimg
 swaylock
+swtpm
 tlp
 tree
 ttf-nerd-fonts-symbols-mono
@@ -85,3 +88,4 @@ xdg-desktop-portal-gtk
 xdg-desktop-portal-wlr
 xdg-user-dirs
 xorg-xwayland
+zbar
