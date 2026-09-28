@@ -5,6 +5,7 @@ base
 base-devel
 bash-completion
 bat
+bind
 bluetui
 bluez
 brightnessctl
@@ -62,6 +63,7 @@ qt6ct
 rsync
 sbctl
 scrcpy
+sdcv
 slurp
 smartmontools
 stow

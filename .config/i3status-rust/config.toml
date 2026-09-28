@@ -37,6 +37,7 @@ full_format = "[$percentage]"
 not_charging_format = "[$percentage]"
 missing_format = "[BAT ERRO]"
 full_threshold = 100
+empty_threshold = 0
 warning = 20
 critical = 0
 [block.theme_overrides]
