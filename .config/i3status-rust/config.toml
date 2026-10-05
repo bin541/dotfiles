@@ -164,6 +164,7 @@ interval = 5
 block = "net"
 device = "^(en|eth).*"
 format = "[$icon]"
+inactive_format = "[...]"
 missing_format = ""
 
 [[block]]

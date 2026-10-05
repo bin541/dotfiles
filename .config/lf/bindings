@@ -1,4 +1,4 @@
-map a push :mkdir<space>
+map F push :mkdir<space>
 
 map f push :touch<space>
 
