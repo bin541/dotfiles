@@ -33,8 +33,6 @@ libnotify
 librewolf
 libvirt
 linux
-linux-cachyos
-linux-cachyos-headers
 linux-firmware-amdgpu
 linux-firmware-mediatek
 linux-headers
@@ -60,13 +58,11 @@ paru
 payload-dumper-go
 pipewire-pulse
 poppler
-python-pip
 qemu-base
 qt6ct
 rsync
 sbctl
 scrcpy
-sdcv
 slurp
 smartmontools
 stow
@@ -83,7 +79,6 @@ ttyper
 ufw
 usbutils
 virt-manager
-vulkan-radeon
 w3m
 wf-recorder
 wget
@@ -94,5 +89,4 @@ wob
 xdg-desktop-portal-gtk
 xdg-desktop-portal-wlr
 xdg-user-dirs
-xorg-xwayland
 zbar

@@ -87,6 +87,20 @@
 !.config/wireplumber/wireplumber.conf.d/
 !.config/wireplumber/wireplumber.conf.d/bluetooth-rate.conf
 
+!.config/btop/
+!.config/btop/btop.conf
+
+!.config/gtk-3.0/
+!.config/gtk-3.0/settings.ini
+!.config/gtk-4.0/
+!.config/gtk-4.0/settings.ini
+
+!.config/qt6ct/
+!.config/qt6ct/qt6ct.conf
+
+!.config/xsettingsd/
+!.config/xsettingsd/xsettingsd.conf
+
 !/etc/
 !/etc/keyd/
 !/etc/keyd/default.conf

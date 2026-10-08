@@ -15,12 +15,11 @@ alias gr="git reset HEAD~1"
 alias gpf="git push origin -f"
 
 alias c="clear"
-alias ~="cd ~"
 alias dot="cd /home/rix/pro/dot/ && ls -la"
-
 alias ll="ls -l"
 alias sb="source .bashrc"
 
-alias ai="ollama run deepseek-r1:14b"
+alias dpsk="ollama run deepseek-r1:14b"
+alias qwen="ollama run qwen3.5:9b"
 
 alias os="fastfetch"
