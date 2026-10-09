@@ -41,27 +41,27 @@ pacman -S --needed - < pkgs.list
 | Audio service | pipewire |
 | Audio control | wiremix |
 | Bluetooth | bluetui |
-| Screen backlight control | brightnessctl | ddcutil |
-| Screenshot | grim | slurp |
+| Screen backlight control | brightnessctl - ddcutil |
+| Screenshot | grim - slurp |
 | Progress bar | wob |
-| Notifications | mako | libnotify |
+| Notifications | mako - libnotify |
 | System monitor | btop |
 | Network manager | networkmanager |
 | Firewall | ufw |
-| Browser | librewolf | w3m |
+| Browser | librewolf - w3m |
 | RSS reader | newsboat |
-| Music player | ncmpcpp | mpc | mpd |
+| Music player | ncmpcpp - mpc - mpd |
 | Video player | mpv |
 | Image viewer | swayimg |
-| Screen recording | wf-recorder | obs |
-| Virtualization | libvirt | qemu-base | virt-manager |
+| Screen recording | wf-recorder - obs |
+| Virtualization | libvirt - qemu-base - virt-manager |
 | Keyboard remapping | keyd |
-| Fonts | noto-fonts-cjk | ttf-nerd-fonts-symbols-mono |
+| Fonts | noto-fonts-cjk - ttf-nerd-fonts-symbols-mono |
 | Local AI | ollama |
 | AI agent | openai-codex |
 | Dotfile management | stow |
 | File sync | rsync |
-| Android debugging | android-tools | scrcpy |
+| Android debugging | android-tools - scrcpy |
 | Android file transfer | android-file-transfer |
 | Version control | git |
 | Archive compression/extraction | ouch |

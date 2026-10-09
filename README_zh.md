@@ -41,27 +41,27 @@ pacman -S --needed - < pkgs.list
 | 音频服务 | pipewire |
 | 音频管理 | wiremix |
 | 蓝牙管理 | bluetui |
-| 屏幕背光控制 | brightnessctl | ddcutil |
-| 截图 | grim | slurp |
+| 屏幕背光控制 | brightnessctl - ddcutil |
+| 截图 | grim - slurp |
 | 进度条 | wob |
-| 消息通知 | mako | libnotify |
+| 消息通知 | mako - libnotify |
 | 系统监控 | btop |
 | 网络管理 | networkmanager |
 | 防火墙 | ufw |
-| 浏览器 | librewolf | w3m |
+| 浏览器 | librewolf - w3m |
 | rss订阅 | newsboat |
-| 音乐播放器 | ncmpcpp | mpc | mpd |
+| 音乐播放器 | ncmpcpp - mpc - mpd |
 | 视频播放器 | mpv |
 | 图片查看 | swayimg |
-| 屏幕录制 | wf-recorder | obs |
-| 虚拟化 | libvirt | qemu-base | virt-manager |
+| 屏幕录制 | wf-recorder - obs |
+| 虚拟化 | libvirt - qemu-base - virt-manager |
 | 键盘映射 | keyd |
-| 字体 | noto-fonts-cjk | ttf-nerd-fonts-symbols-mono |
+| 字体 | noto-fonts-cjk - ttf-nerd-fonts-symbols-mono |
 | 本地ai | ollama |
 | ai-agent | openai-codex |
 | 配置文件管理 | stow |
 | 文件同步 | rsync |
-| 安卓调试 | android-tools | scrcpy |
+| 安卓调试 | android-tools - scrcpy |
 | 安卓文件传输 | android-file-transfer |
 | 代码管理 | git |
 | 文件压缩与解压 | ouch |

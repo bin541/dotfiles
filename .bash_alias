@@ -15,6 +15,7 @@ alias gr="git reset HEAD~1"
 alias gpf="git push origin -f"
 
 alias c="clear"
+alias pro="cd /home/rix/pro && ls -la"
 alias dot="cd /home/rix/pro/dot/ && ls -la"
 alias ll="ls -l"
 alias sb="source .bashrc"
