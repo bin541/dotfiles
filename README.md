@@ -21,9 +21,59 @@ You can refer to my Arch Linux [installation](./arch_install.md) habits
 ## Software I Use
 ```sh
 # Check pkglist.txt within the repository to view my installed software
+cat pkgs.list | less
+
 # Redirect pkglist.txt into pacman to install the listed packages
 pacman -S --needed - < pkgs.list
 ```
+
+| | |
+|:---|:---|
+| Operating system | Arch Linux |
+| Shell | bash |
+| Display protocol | wayland |
+| Desktop environment | sway |
+| Terminal | foot |
+| Text editor | neovim |
+| File manager | lf |
+| Status bar | i3status-rust |
+| Input method | fcitx5 |
+| Audio service | pipewire |
+| Audio control | wiremix |
+| Bluetooth | bluetui |
+| Screen backlight control | brightnessctl | ddcutil |
+| Screenshot | grim | slurp |
+| Progress bar | wob |
+| Notifications | mako | libnotify |
+| System monitor | btop |
+| Network manager | networkmanager |
+| Firewall | ufw |
+| Browser | librewolf | w3m |
+| RSS reader | newsboat |
+| Music player | ncmpcpp | mpc | mpd |
+| Video player | mpv |
+| Image viewer | swayimg |
+| Screen recording | wf-recorder | obs |
+| Virtualization | libvirt | qemu-base | virt-manager |
+| Keyboard remapping | keyd |
+| Fonts | noto-fonts-cjk | ttf-nerd-fonts-symbols-mono |
+| Local AI | ollama |
+| AI agent | openai-codex |
+| Dotfile management | stow |
+| File sync | rsync |
+| Android debugging | android-tools | scrcpy |
+| Android file transfer | android-file-transfer |
+| Version control | git |
+| Archive compression/extraction | ouch |
+| Power management | tlp |
+| Clipboard | wl-clipboard |
+| Secure boot | sbctl |
+| Wallpaper | swaybg |
+| Screen lock | swaylock |
+| Idle management | swayidle |
+| Typing practice | ttyper |
+| Launcher | wmenu |
+| QR code scanning | zbar |
 
 ## How to Use?
 ```sh
@@ -34,6 +84,7 @@ git clone https://github.com/bin541/dotfiles.git
 cd ~/path/dotfiles
 
 # Use stow to manage configurations
+# Please back up your existing configuration; files will be overwritten
 # Create a soft link
 stow --adopt -t ~ .
 

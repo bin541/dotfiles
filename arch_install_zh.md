@@ -24,13 +24,13 @@ sha256 archlinux-2026.1.1-x86_64.iso
 
 插入安装u盘并从u盘启动
 
-插入网线使用有线网络\iwctl连接无线网络
+插入网线使用有线网络/iwctl连接无线网络
 ```sh
 iwctl
-     [iwd]# device list
-     [iwd]# station DEVICE scan
-     [iwd]# station DEVICE get-networks
-     [iwd]# station DEVICE connect SSID
+    [iwd]# device list
+    [iwd]# station DEVICE scan
+    [iwd]# station DEVICE get-networks
+    [iwd]# station DEVICE connect SSID
 ```
 
 我在中国大陆，使用阿里云镜像加速下载
@@ -45,8 +45,17 @@ pacman -S archlinux-keyring
 ``` 
 
 ## 1.加密与分区
-我对nvme0n1机器上第一块硬盘创建GPT分区表并分出nvme0n1p1（fat32文件系统，作为boot分区并使用sbctl配置安全启动）与nvme0n1p2（ext4文件系统，作为/根分区并使用crypt进行全盘加密  
+我在nvme0n1硬盘上创建GPT分区表并分出nvme0n1p1（fat32文件系统，作为 boot 分区并使用sbctl配置安全启动）与nvme0n1p2（ext4文件系统，作为 根分区 并使用crypt进行全盘加密
 cfdisk对硬盘创建GPT分区表并分区
+```sh
+lsblk
+    NAME        MAJ:MIN RM   SIZE RO TYPE  MOUNTPOINTS
+    nvme0n1     259:0    0   1.9T  0 disk  
+    ├─nvme0n1p1 259:1    0   512M  0 part  /boot
+    ├─nvme0n1p2 259:2    0   1.5T  0 part  
+    └─root      253:0    0   1.5T  0 crypt /
+```
+
 ```sh
 cfdisk /dev/nvme0n1
 ```
@@ -193,7 +202,7 @@ sbctl sign -s /boot/EFI/BOOT/BOOTX64.EFI
 sbctl sign -s /boot/EFI/systemd/systemd-bootx64.efi
 ```
 
-## 8.可信平台模块
+## 8.可信平台模块()
 绑定TPM芯片，需要输入刚创建的加密密码
 ```sh
 systemd-cryptenroll --wipe-slot=tpm2 /dev/nvme0n1p2
