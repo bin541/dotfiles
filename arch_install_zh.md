@@ -1,5 +1,5 @@
 # Arch Linux
-我在笔记本电脑单块硬盘上全盘安装archlinux，并对硬盘全盘加密同时使用TPM芯片对硬盘自动解密，以及使用sbctl配置安全启动（签名\验证boot分区的内核...）
+我在笔记本电脑单块硬盘上全盘安装archlinux，并对硬盘全盘加密同时使用TPM芯片对硬盘自动解密，以及使用sbctl配置安全启动（签名/验证boot分区的内核...）
 
 - 平台：笔记本x86_64
 - 主板固件：UEFI
@@ -7,7 +7,7 @@
 - 安全芯片：TPM2.0
 - 硬盘加密：crypt
 - 引导加载程序：systemd-boot
-- 内核：linux-arch 
+- 内核：linux
 - 安全启动：sbctl
 
 ## 0.准备
@@ -45,7 +45,7 @@ pacman -S archlinux-keyring
 ``` 
 
 ## 1.加密与分区
-我在nvme0n1硬盘上创建GPT分区表并分出nvme0n1p1（fat32文件系统，作为 boot 分区并使用sbctl配置安全启动）与nvme0n1p2（ext4文件系统，作为 根分区 并使用crypt进行全盘加密
+我在nvme0n1硬盘上创建GPT分区表并分出nvme0n1p1（fat32文件系统，作为 boot 分区并使用sbctl配置安全启动）与nvme0n1p2（ext4文件系统，作为 根分区 并使用crypt进行全盘加密）
 cfdisk对硬盘创建GPT分区表并分区
 ```sh
 lsblk
@@ -63,7 +63,7 @@ cfdisk /dev/nvme0n1
 加密nvme0n1p2分区并打开该加密分区，想一个复杂密码，加密的nvme0n1p2分区将被映射至/dev/cryptroot
 ```sh
 cryptsetup luksFormat /dev/nvme0n1p2 
-cryptopen /dev/nvme0n1p2 cryptroot
+cryptsetup open /dev/nvme0n1p2 cryptroot
 ```
 
 创建文件系统
@@ -94,9 +94,9 @@ swapon /mnt/swapfile
 
 ## 3.安装基本系统
 - 我使用amd处理器，安装amd-ucode微码，如果是intel，则为intel-ucode，在虚拟机中则不用安装微码
-- linux-firmware包含所有平台固件，如你清楚自己电脑所需的详细固件包可单独安装，如：linux-firmware-amdgpu \ linux-firmware-intel \ ...
+- linux-firmware包含所有平台固件，如你清楚自己电脑所需的详细固件包可单独安装，如：linux-firmware-amdgpu / linux-firmware-intel / ...
 ```sh
-pacstarp -K /mnt base base-devel linux linux-firmware amd-ucode sbctl vim bash-completion ufw networkmanager bluez
+pacstrap -K /mnt base base-devel linux linux-firmware amd-ucode sbctl vim bash-completion ufw networkmanager bluez
 ``` 
 
 将分区结构写入fstab文件
@@ -111,7 +111,7 @@ arch-chroot /mnt
 
 同步硬件时钟，我使用亚洲上海时区
 ```sh
-ln -sf /usr/share/zoninfo/Asia/Shanghai/ /etc/localtime
+ln -sf /usr/share/zoneinfo/Asia/Shanghai/ /etc/localtime
 hwclock -systohc
 ```
 
@@ -134,7 +134,7 @@ vim /etc/locale.gen
 -#en_US.UTF-8 UTF-8
 +en_US.UTF-8 UTF-8
 locale-gen
-echo 'LANG=en_us.UTF-8' > locale.conf
+echo 'LANG=en_US.UTF-8' > locale.conf
 ```
 
 创建账户并加入wheel组
@@ -202,7 +202,7 @@ sbctl sign -s /boot/EFI/BOOT/BOOTX64.EFI
 sbctl sign -s /boot/EFI/systemd/systemd-bootx64.efi
 ```
 
-## 8.可信平台模块()
+## 8.可信平台模块(TPM)
 绑定TPM芯片，需要输入刚创建的加密密码
 ```sh
 systemd-cryptenroll --wipe-slot=tpm2 /dev/nvme0n1p2
@@ -227,8 +227,8 @@ git clone https://github.com/bin541/dotfiles.git
 # 进入仓库目录
 cd ~/path/dotfiles
 
-# 将仓库内pkglist.txt文件输入重定向至pacman可安装列表中的软件
-pacman -S --needed - < pkglist.txt
+# 将仓库内pkgs.list文件输入重定向至pacman可安装列表中的软件
+pacman -S --needed - < pkgs.list
 
 # 使用stow管理配置
 # 创建软链接
@@ -250,7 +250,7 @@ exit
 
 # 拔出u盘
 
-# 重启\关机
+# 重启/关机
 reboot
 poweroff
 ```

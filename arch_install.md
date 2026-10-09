@@ -7,7 +7,7 @@ I am performing a full-disk installation of Arch Linux on a single drive in a la
 - Security Chip: TPM 2.0
 - Disk Encryption: crypt
 - Bootloader: systemd-boot
-- Kernel: linux-arch
+- Kernel: linux
 - Secure Boot: sbctl
 
 ## 0.Preparation
@@ -18,7 +18,7 @@ Verify that the file has not been modified, such as by verifying the hash value:
 sha256 archlinux-2026.1.1-x86_64.iso
 ```
 
-Create an Arch Linux installation USB drive; I use [Ventoy.](https://www.ventoy.net).
+Create an Arch Linux installation USB drive; I use [Ventoy](https://www.ventoy.net).
 
 Enter UEFI, disable Secure Boot to enter Setup Mode, and clear existing keys.
 
@@ -27,10 +27,10 @@ Insert the installation USB drive and boot from it.
 Connect an Ethernet cable for a wired connection, or use iwctl to connect to a Wi-Fi network:
 ```sh
 iwctl
-     [iwd]# device list
-     [iwd]# station DEVICE scan
-     [iwd]# station DEVICE get-networks
-     [iwd]# station DEVICE connect SSID
+    [iwd]# device list
+    [iwd]# station DEVICE scan
+    [iwd]# station DEVICE get-networks
+    [iwd]# station DEVICE connect SSID
 ```
 
 Since I am in Mainland China, I use the Alibaba Cloud mirror to speed up the download:
@@ -48,12 +48,22 @@ pacman -S archlinux-keyring
 I will create a GPT partition table on the first drive (nvme0n1) and divide it into nvme0n1p1 (FAT32 filesystem, used as the boot partition and configured for Secure Boot with sbctl) and nvme0n1p2 (ext4 filesystem, used as the root / partition with full-disk encryption via crypt).  
 Use cfdisk to create the GPT partition table and partition the drive:
 ```sh
+lsblk
+    NAME        MAJ:MIN RM   SIZE RO TYPE  MOUNTPOINTS
+    nvme0n1     259:0    0   1.9T  0 disk  
+    ├─nvme0n1p1 259:1    0   512M  0 part  /boot
+    ├─nvme0n1p2 259:2    0   1.5T  0 part  
+    └─root      253:0    0   1.5T  0 crypt /
+```
+
+```sh
 cfdisk /dev/nvme0n1
 ```
+
 Encrypt the nvme0n1p2 partition and open it. Think of a complex passphrase. The encrypted nvme0n1p2 partition will be mapped to /dev/cryptroot:
 ```sh
 cryptsetup luksFormat /dev/nvme0n1p2 
-cryptopen /dev/nvme0n1p2 cryptroot
+cryptsetup open /dev/nvme0n1p2 cryptroot
 ```
 
 Create filesystems:
@@ -86,7 +96,7 @@ swapon /mnt/swapfile
 - I use an AMD processor, so I install the amd-ucode microcode. If using Intel, it would be intel-ucode. If you are in a virtual machine, you don't need to install microcode.
 - linux-firmware contains firmware for all platforms. If you know the specific firmware packages your computer needs, you can install them individually, e.g., linux-firmware-amdgpu / linux-firmware-intel / ...
 ```sh
-pacstarp -K /mnt base base-devel linux linux-firmware amd-ucode sbctl vim bash-completion ufw networkmanager bluez
+pacstrap -K /mnt base base-devel linux linux-firmware amd-ucode sbctl vim bash-completion ufw networkmanager bluez
 ``` 
 
 Write the partition layout to the fstab file:
@@ -101,7 +111,7 @@ arch-chroot /mnt
 
 Synchronize the hardware clock. I use the Asia/Shanghai time zone:
 ```sh
-ln -sf /usr/share/zoninfo/Asia/Shanghai/ /etc/localtime
+ln -sf /usr/share/zoneinfo/Asia/Shanghai/ /etc/localtime
 hwclock -systohc
 ```
 
@@ -124,7 +134,7 @@ vim /etc/locale.gen
 -#en_US.UTF-8 UTF-8
 +en_US.UTF-8 UTF-8
 locale-gen
-echo 'LANG=en_us.UTF-8' > locale.conf
+echo 'LANG=en_US.UTF-8' > locale.conf
 ```
 
 Create a user account and add it to the wheel group:
@@ -217,8 +227,8 @@ git clone https://github.com/bin541/dotfiles.git
 # Enter the repository directory 
 cd ~/path/dotfiles
 
-# Redirect the pkglist.txt file from the repository into pacman to install the listed packages
-pacman -S --needed - < pkglist.txt
+# Redirect the pkgs.list file from the repository into pacman to install the listed packages
+pacman -S --needed - < pkgs.list
 
 # Use stow to manage configurations
 # Create symbolic links
@@ -242,5 +252,5 @@ exit
 
 # Reboot / Power off
 reboot
-Power
+poweroff
 ```

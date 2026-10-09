@@ -20,10 +20,10 @@ You can refer to my Arch Linux [installation](./arch_install.md) habits
 
 ## Software I Use
 ```sh
-# Check pkglist.txt within the repository to view my installed software
+# Check pkgs.list within the repository to view my installed software
 cat pkgs.list | less
 
-# Redirect pkglist.txt into pacman to install the listed packages
+# Redirect pkgs.list into pacman to install the listed packages
 pacman -S --needed - < pkgs.list
 ```
 

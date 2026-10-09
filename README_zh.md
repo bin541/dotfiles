@@ -20,10 +20,10 @@
 
 ## 我使用的软件
 ```sh
-# 查看仓库内pkglist.txt文件了解我使用的软件
+# 查看仓库内pkgs.list文件了解我使用的软件
 cat pkgs.list | less
 
-# 将pkglist.txt输入重定向至pacman可安装列表中的软件
+# 将pkgs.list输入重定向至pacman可安装列表中的软件
 pacman -S --needed - < pkgs.list
 ```
 
