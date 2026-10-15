@@ -74,6 +74,7 @@ pacman -S --needed - < pkgs.list
 | 打字 | ttyper |
 | 启动器 | wmenu |
 | 二维码扫描 | zbar |
+| 沙箱应用 | flatpak |
 
 ## 如何使用？
 ```sh

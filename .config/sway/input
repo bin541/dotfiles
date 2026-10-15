@@ -16,4 +16,4 @@ input type:pointer {
     accel_profile flat
 }
 
-#seat * hide_cursor 5000
+seat * hide_cursor 5000

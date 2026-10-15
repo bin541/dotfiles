@@ -1,12 +1,14 @@
-bindsym $mod+return   exec $term
-bindsym $mod+Shift+q  kill
-bindsym $mod+d        exec $menu
-bindsym $mod+Shift+c  reload
-bindsym $mod+Shift+e  exec swaynag -t warning -m 'exit sway?' -B 'yes' 'swaymsg exit'
-bindsym $mod+Shift+b  bar mode toggle
-bindsym $mod+Shift+s  exec systemctl sleep
-bindsym $mod+o        output eDP-1 disable
-bindsym $mod+Shift+o  output eDP-1 enable
+bindsym $mod+return  exec $term
+bindsym $mod+q       kill
+bindsym $mod+d       exec $menu
+bindsym $mod+c       reload
+bindsym $mod+Shift+e exec swaynag -t warning -m 'exit sway?' -B 'yes' 'swaymsg exit'
+bindsym $mod+Shift+b bar mode toggle
+bindsym $mod+Shift+o output eDP-1 disable
+bindsym $mod+o       output eDP-1 enable
+
+bindsym --no-repeat $mod+s       exec $screenshot && notify-send "screenshot full"
+bindsym --no-repeat $mod+Shift+s exec $screenclip && notify-send "screenshot clip"
 
 bindsym $mod+$left  focus left
 bindsym $mod+$down  focus down
@@ -26,9 +28,9 @@ bindsym $mod+Shift+space focus mode_toggle
 
 bindsym $mod+b splith
 bindsym $mod+v splitv
-#bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-#bindsym $mod+e layout toggle split
+# bindsym $mod+s layout stacking
+# bindsym $mod+w layout tabbed
+# bindsym $mod+e layout toggle split
 bindsym $mod+f fullscreen
 
 bindsym $mod+1 workspace number 1
@@ -52,6 +54,3 @@ bindsym $mod+Shift+7 move container to workspace number 7
 bindsym $mod+Shift+8 move container to workspace number 8
 bindsym $mod+Shift+9 move container to workspace number 9
 bindsym $mod+Shift+0 move container to workspace number 10
-
-bindsym --no-repeat $mod+p       exec $screenshot && notify-send "screenshot full"
-bindsym --no-repeat $mod+Shift+p exec $screenclip && notify-send "screenshot clip"

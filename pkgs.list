@@ -33,6 +33,8 @@ libnotify
 librewolf
 libvirt
 linux
+linux-cachyos
+linux-cachyos-headers
 linux-firmware-amdgpu
 linux-firmware-mediatek
 linux-headers
@@ -48,6 +50,7 @@ networkmanager
 newsboat
 noto-fonts-cjk
 noto-fonts-emoji
+nwg-look
 ollama
 openai-codex
 openssh
@@ -78,6 +81,7 @@ ttyper
 ufw
 usbutils
 virt-manager
+vulkan-radeon
 w3m
 wf-recorder
 wget
@@ -88,4 +92,5 @@ wob
 xdg-desktop-portal-gtk
 xdg-desktop-portal-wlr
 xdg-user-dirs
+xorg-xwayland
 zbar

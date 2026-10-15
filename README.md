@@ -74,6 +74,7 @@ pacman -S --needed - < pkgs.list
 | Typing practice | ttyper |
 | Launcher | wmenu |
 | QR code scanning | zbar |
+| Sandbox app | flatpak |
 
 ## How to Use?
 ```sh
