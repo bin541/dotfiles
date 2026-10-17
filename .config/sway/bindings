@@ -1,7 +1,7 @@
 bindsym $mod+return  exec $term
-bindsym $mod+q       kill
+bindsym $mod+Shift+q kill
 bindsym $mod+d       exec $menu
-bindsym $mod+c       reload
+bindsym $mod+Shift+c reload
 bindsym $mod+Shift+e exec swaynag -t warning -m 'exit sway?' -B 'yes' 'swaymsg exit'
 bindsym $mod+Shift+b bar mode toggle
 bindsym $mod+Shift+o output eDP-1 disable

@@ -24,6 +24,11 @@ net_wireless = ""
 net_wired = "󰈀"
 
 [[block]]
+block = "focused_window"
+driver = "sway_ipc"
+format = "[$title.str(max_w:40)]|"
+
+[[block]]
 block = "custom"
 format = "[󰎆$text.pango-str()]"
 command = "sh -c 's=$(mpc --format \"[[%title% - ]%artist%]|[%name%]\" current); [ -n \"$s\" ] && { [ ${#s} -gt 20 ] && echo \"${s:0:20}...\" || echo \"$s\"; }'"
