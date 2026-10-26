@@ -8,10 +8,12 @@ bat
 bind
 bluetui
 bluez
+bluez-utils
 brightnessctl
 btop
 cava
 chafa
+cliphist
 ddcutil
 dnsmasq
 fastfetch
@@ -33,8 +35,6 @@ libnotify
 librewolf
 libvirt
 linux
-linux-cachyos
-linux-cachyos-headers
 linux-firmware-amdgpu
 linux-firmware-mediatek
 linux-headers
@@ -52,6 +52,7 @@ noto-fonts-cjk
 noto-fonts-emoji
 nwg-look
 ollama
+ollama-vulkan
 openai-codex
 openssh
 opentabletdriver-git
@@ -92,5 +93,4 @@ wob
 xdg-desktop-portal-gtk
 xdg-desktop-portal-wlr
 xdg-user-dirs
-xorg-xwayland
 zbar

@@ -1,5 +1,7 @@
 exec fcitx5 -d
 
+exec mpris-proxy
+
 exec_always rm -f $wobsock && mkfifo $wobsock && tail -f $wobsock | wob
 
 exec swayidle -w \

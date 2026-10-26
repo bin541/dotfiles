@@ -72,7 +72,7 @@
 !.config/sway/bar
 !.config/sway/bindings
 !.config/sway/bindings_mode
-!.config/sway/bindings-xf86
+!.config/sway/bindings_xf86
 !.config/sway/config
 !.config/sway/exec
 !.config/sway/input

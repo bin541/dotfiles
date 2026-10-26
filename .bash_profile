@@ -1,5 +1,7 @@
 # ~/.bash_profile
 
+export WLR_RENDERER=vulkan
+
 [[ -f ~/.bashrc ]] && . ~/.bashrc
 
 if [ "$(tty)" = "/dev/tty1" ]; then

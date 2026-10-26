@@ -20,7 +20,7 @@ alias dot="cd /home/rix/pro/dot/ && ls -la"
 alias ll="ls -l"
 alias sb="source .bashrc"
 
-alias gpt="ollama run gpt-oss:20b"
+alias gpt="ollama run gpt-oss:20b-cpu"
 alias qwen="ollama run qwen3.5:9b"
 
 alias os="fastfetch"

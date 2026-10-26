@@ -11,15 +11,13 @@ uptime = "󱡧"
 thermometer = ""
 cpu = ""
 memory_mem = ""
+#disk_drive =  "󰗮"
 microphone = ""
 microphone_muted = "󰍭"
 volume = ""
 volume_muted = ""
 backlight = ""
 headphones = "󰂯󰋋"
-keyboard = "󰂯󰌌"
-mouse = "󰂯"
-joystick = "󰂯󰊴"
 net_wireless = ""
 net_wired = "󰈀"
 
@@ -66,6 +64,10 @@ block = "memory"
 format = "[$icon$mem_used_percents]"
 
 [[block]]
+block = "disk_space"
+format = "[$icon$free]"
+
+[[block]]
 block = "sound"
 device_kind = "source"
 format = "[$icon{$volume|}]"
@@ -86,49 +88,10 @@ action = "toggle_mute"
 button = "right"
 cmd = "true"
 
-# keyboard
-[[block]]
-block = "bluetooth"
-mac = "D1:3E:38:35:09:40"
-format = "[$icon{$percentage|}]"
-disconnected_format = ""
-[block.battery_state]
-"0..20" = "warning"
-"21..100" = "idle"
-[[block.click]]
-button = "right"
-cmd = "true"
-
-# mouse
-[[block]]
-block = "bluetooth"
-mac = "F5:BC:6A:29:AF:38"
-format = "[$icon{$percentage|}]"
-disconnected_format = ""
-[block.battery_state]
-"0..20" = "warning"
-"21..100" = "idle"
-[[block.click]]
-button = "right"
-cmd = "true"
-
 # headphones
 [[block]]
 block = "bluetooth"
 mac = "25:07:01:B6:B5:52"
-format = "[$icon{$percentage|}]"
-disconnected_format = ""
-[block.battery_state]
-"0..20" = "warning"
-"21..100" = "idle"
-[[block.click]]
-button = "right"
-cmd = "true"
-
-# joystick
-[[block]]
-block = "bluetooth"
-mac = "C9:F0:0E:D7:FC:9F"
 format = "[$icon{$percentage|}]"
 disconnected_format = ""
 [block.battery_state]
