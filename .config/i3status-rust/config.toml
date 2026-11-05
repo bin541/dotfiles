@@ -29,7 +29,7 @@ format = "[$title.str(max_w:40)]|"
 [[block]]
 block = "custom"
 format = "[󰎆$text.pango-str()]"
-command = "sh -c 's=$(mpc --format \"[[%title% - ]%artist%]|[%name%]\" current); [ -n \"$s\" ] && { [ ${#s} -gt 20 ] && echo \"${s:0:20}...\" || echo \"$s\"; }'"
+command = "sh -c 's=$(mpc --format \"[[%title% - ]%artist%]|[%name%]\" current); [ -n \"$s\" ] && { [ ${#s} -gt 20 ] && echo \"${s:0:20}\" || echo \"$s\"; }'"
 hide_when_empty = true
 interval = 5
 

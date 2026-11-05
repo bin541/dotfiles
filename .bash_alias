@@ -21,6 +21,8 @@ alias ll="ls -l"
 alias sb="source .bashrc"
 
 alias gpt="ollama run gpt-oss:20b-cpu"
+alias sgpt="ollama stop gpt-oss:20b-cpu"
 alias qwen="ollama run qwen3.5:9b"
+alias sqwen="ollama stop qwen3.5:9b"
 
 alias os="fastfetch"

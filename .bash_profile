@@ -1,6 +1,6 @@
 # ~/.bash_profile
 
-export WLR_RENDERER=vulkan
+#export WLR_RENDERER=vulkan
 
 [[ -f ~/.bashrc ]] && . ~/.bashrc
 

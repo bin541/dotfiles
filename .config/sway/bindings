@@ -6,9 +6,10 @@ bindsym $mod+Shift+e exec swaynag -t warning -m 'exit sway?' -B 'yes' 'swaymsg e
 bindsym $mod+Shift+b bar mode toggle
 bindsym $mod+Shift+o output eDP-1 disable
 bindsym $mod+o       output eDP-1 enable
+bindsym $mod+Shift+s exec systemctl sleep
 
-bindsym --no-repeat $mod+s       exec $screenshot && notify-send "screenshot full"
-bindsym --no-repeat $mod+Shift+s exec $screenclip && notify-send "screenshot clip"
+bindsym --no-repeat $mod+p       exec $screenshot && notify-send "screenshot full"
+bindsym --no-repeat $mod+Shift+p exec $screenclip && notify-send "screenshot clip"
 
 bindsym $mod+$left  focus left
 bindsym $mod+$down  focus down
