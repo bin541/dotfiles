@@ -72,11 +72,6 @@ cat pkgs.list | less
 | QR code scanning | zbar |
 | Sandbox apps | flatpak |
 
-## Clone the Repository
-```sh
-git clone https://github.com/bin541/dotfiles.git
-```
-
 ## License
 [GNU GPL v3.0](./LICENSE)
 ```sh

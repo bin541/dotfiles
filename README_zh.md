@@ -72,11 +72,6 @@ cat pkgs.list | less
 | 二维码扫描 | zbar |
 | 沙箱应用 | flatpak |
 
-## 克隆仓库
-```sh
-git clone https://github.com/bin541/dotfiles.git
-```
-
 ## 许可证
 [GNU GPL v3.0](./LICENSE)
 ```sh
