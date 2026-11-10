@@ -215,7 +215,7 @@ systemctl enable ufw NetworkManager bluetooth systemd-timesyncd
 ```sh
 pacman -S git
 
-git clone https://github.com/bin541/dotfiles.git
+git clone https://github.com/bin541/dotfiles.git / git clone https://codeberg.org/bin541/dotfiles.git
 
 cd ~/path/dotfiles
 
