@@ -8,29 +8,25 @@
 </p>
 
 > [!NOTE]
-> - Configure as minimalist as possible
-> - The warehouse has been continuously updating
-> - Keyboard-centered operation
+> - Minimalist
+> - Keyboard-driven
+> - Rolling updates
 
 ## [Arch Linux](https://archlinux.org) and [Sway](https://swaywm.org)
-I use Arch Linux and Sway as my desktop environment. Arch Linux is a minimalist and pragmatic operating system; unlike other Linux distributions, it does not provide an out-of-the-box experience. Arch Linux requires you to configure most things yourself, which is very interesting for DIY users. Sway is the Wayland migration of i3 under Xorg. It is user-friendly in terms of configuration and is fully compatible with i3 configurations, so you can directly copy your i3 configuration to Sway.
+I use Arch Linux and Sway as my operating system and desktop environment. Arch Linux is a minimalist and pragmatic operating system. It does not provide an out-of-the-box experience and requires you to configure most things yourself, which is very interesting for DIY users. Sway is the Wayland port of i3 under Xorg. It is easy to configure and largely compatible with i3 configurations, so you can try copying your i3 configuration directly to Sway.
 
-## Install Arch Linux?
-You can refer to my Arch Linux [installation](./arch_install.md) habits
+## Install Arch Linux
+You can refer to my Arch Linux [installation](./arch_install.md) habits.
 
 ## Software I Use
 ```sh
-# Check pkgs.list within the repository to view my installed software
 cat pkgs.list | less
-
-# Redirect pkgs.list into pacman to install the listed packages
-pacman -S --needed - < pkgs.list
 ```
 
 | | |
 |:---|:---|
 | Operating system | Arch Linux |
-| Shell | bash |
+| Script interpreter | bash |
 | Display protocol | wayland |
 | Desktop environment | sway |
 | Terminal | foot |
@@ -39,58 +35,46 @@ pacman -S --needed - < pkgs.list
 | Status bar | i3status-rust |
 | Input method | fcitx5 |
 | Audio service | pipewire |
-| Audio control | wiremix |
-| Bluetooth | bluetui |
-| Screen backlight control | brightnessctl - ddcutil |
-| Screenshot | grim - slurp |
+| Audio management | wiremix |
+| Bluetooth management | bluetui |
+| Screen backlight control | brightnessctl  -  ddcutil |
+| Screenshot | grim  -  slurp |
 | Progress bar | wob |
-| Notifications | mako - libnotify |
-| System monitor | btop |
-| Network manager | networkmanager |
+| Notifications | mako  -  libnotify |
+| System monitoring | btop |
+| Network management | networkmanager |
 | Firewall | ufw |
-| Browser | librewolf - w3m |
-| RSS reader | newsboat |
-| Music player | ncmpcpp - mpc - mpd |
+| Browser | librewolf  -  w3m |
+| RSS subscription | newsboat |
+| Music player | ncmpcpp  -  mpc  -  mpd |
 | Video player | mpv |
-| Image viewer | swayimg |
-| Screen recording | wf-recorder - obs |
-| Virtualization | libvirt - qemu-base - virt-manager |
-| Keyboard remapping | keyd |
-| Fonts | noto-fonts-cjk - ttf-nerd-fonts-symbols-mono |
+| Image viewing | swayimg |
+| Screen recording | wf-recorder |
+| Virtualization | libvirt  -  qemu-base  -  virt-manager |
+| Keyboard mapping | keyd |
+| Fonts | noto-fonts-cjk  -  ttf-nerd-fonts-symbols-mono |
 | Local AI | ollama |
 | AI agent | openai-codex |
-| Dotfile management | stow |
+| Configuration file management | stow |
 | File sync | rsync |
-| Android debugging | android-tools - scrcpy |
+| Android debugging | android-tools  -  scrcpy |
 | Android file transfer | android-file-transfer |
-| Version control | git |
-| Archive compression/extraction | ouch |
+| Code management | git |
+| File compression and extraction | ouch |
 | Power management | tlp |
 | Clipboard | wl-clipboard |
-| Secure boot | sbctl |
+| Secure Boot | sbctl |
 | Wallpaper | swaybg |
-| Screen lock | swaylock |
-| Idle management | swayidle |
-| Typing practice | ttyper |
+| Lock screen | swaylock |
+| Sleep | swayidle |
+| Typing | ttyper |
 | Launcher | wmenu |
 | QR code scanning | zbar |
-| Sandbox app | flatpak |
+| Sandbox apps | flatpak |
 
-## How to Use?
+## Clone the Repository
 ```sh
-# Clone this repository
 git clone https://github.com/bin541/dotfiles.git
-
-# Enter the repository directory
-cd ~/path/dotfiles
-
-# Use stow to manage configurations
-# Please back up your existing configuration; files will be overwritten
-# Create a soft link
-stow --adopt -t ~ .
-
-# Delete a soft link
-stow -D -t ~ .
 ```
 
 ## License

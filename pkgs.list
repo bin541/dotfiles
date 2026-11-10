@@ -48,8 +48,10 @@ ncmpcpp
 neovim
 networkmanager
 newsboat
+nodejs
 noto-fonts-cjk
 noto-fonts-emoji
+npm
 nwg-look
 ollama
 ollama-vulkan
@@ -63,6 +65,7 @@ pipewire-pulse
 poppler
 qemu-base
 qt6ct
+rocm-smi-lib
 rsync
 sbctl
 scrcpy
@@ -75,7 +78,6 @@ swayidle
 swayimg
 swaylock
 swtpm
-tlp
 tree
 ttf-nerd-fonts-symbols-mono
 ttyper
