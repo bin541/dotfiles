@@ -78,7 +78,7 @@ git clone https://github.com/bin541/dotfiles.git
 ```
 
 ## 许可证
-[GNU GPL 3.0](./LICENSE)
+[GNU GPL v3.0](./LICENSE)
 ```sh
 # @author bin
 ```

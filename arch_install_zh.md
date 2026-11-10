@@ -142,7 +142,7 @@ visudo
 
 ## 5.引导加载程序
 *或使用[统一内核映像UKI](https://wiki.archlinuxcn.org/wiki/%E7%BB%9F%E4%B8%80%E5%86%85%E6%A0%B8%E6%98%A0%E5%83%8F)从UEFI直接启动内核。*  
-安装systemd-boot并创建loader.conf文件*
+安装systemd-boot并创建loader.conf文件
 ```sh
 bootctl install
 vim /boot/loader/loader.conf
