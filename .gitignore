@@ -18,16 +18,16 @@
 !/img/
 !/img/scs-full-2026-08-31-10-01-11.png
 
-!#.gnupg/
-!#.gnupg/gpg-agent.conf
+!.gnupg/
+!.gnupg/gpg-agent.conf
 
-!#.ssh/
-!#.ssh/config
+!.ssh/
+!.ssh/config
 
 !.config/
 
-!.config/#mimeapps.list
-!.config/#user-dirs.dirs
+!.config/mimeapps.list
+!.config/user-dirs.dirs
 
 !.config/mpd/
 !.config/mpd/mpd.conf
