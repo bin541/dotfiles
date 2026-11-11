@@ -1,55 +1,59 @@
 #!/bin/sh
-# posix chafa poppler ffmpegthumbnailer
+# Dependencies: chafa, file, coreutils, poppler, ffmpegthumbnailer
 
-file="$1"
-w="${2:-80}"
-h="${3:-24}"
+file=${1-}
+w=${2:-80}
+h=${3:-24}
 
-CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache}/lf"
-[ ! -d "$CACHE_DIR" ] && mkdir -p -m 700 "$CACHE_DIR"
+ulimit -c 0 2>/dev/null || :
+ulimit -t 10 2>/dev/null || :
+ulimit -v 2097152 2>/dev/null || :
 
-[ -L "$file" ] && file=$(realpath -q -- "$file")
+case "$w" in ''|*[!0-9]*|0*) w=80 ;; esac
+case "$h" in ''|*[!0-9]*|0*) h=24 ;; esac
+[ "${#w}" -le 3 ] || w=80
+[ "${#h}" -le 3 ] || h=24
 
-[ ! -r "$file" ] && { echo "Unreadable or missing file"; exit 1; }
+text_preview() {
+    tr -d '\000-\010\013-\037\177' |
+        expand |
+        fold -w "$w" |
+        head -n "$h"
+}
 
-[ -d "$file" ] && exec ls -Ahlp --color=always -- "$file"
+file=$(realpath -q -e -- "$file" 2>/dev/null) ||
+    { printf 'Unreadable or missing file\n'; exit 1; }
 
-mimeinfo=$(file -b --mime -- "$file" 2>/dev/null)
-mime="${mimeinfo%%;*}"
-encoding="${mimeinfo##*charset=}"
+[ -r "$file" ] || { printf 'Unreadable or missing file\n'; exit 1; }
+[ -d "$file" ] && {
+    exec ls -Ahlp --color=always --quoting-style=shell-escape -- "$file"
+}
+[ -f "$file" ] || { printf 'Not a regular file\n'; exit 0; }
+
+mimeinfo=$(file -b --mime -- "$file" 2>/dev/null) || mimeinfo=
+mime=${mimeinfo%%;*}
 
 case "$mime" in
     image/*)
-        exec chafa -s "${w}x${h}" --format=sixel --animate=false -- "$file"
+        exec timeout 10s chafa -s "${w}x${h}" --format=sixel --animate=false -- "$file" 2>/dev/null
         ;;
-    video/*|application/pdf)
-        mtime=$(stat -c "%Y" -- "$file" 2>/dev/null || echo 0)
-        
-        hash_out=$(printf "%s:%s" "$file" "$mtime" | sha256sum)
-        cache_key="${hash_out%% *}"
-        cache_file="$CACHE_DIR/${cache_key}.jpg"
-
-        if [ ! -f "$cache_file" ]; then
-            if [ "$mime" = "application/pdf" ]; then
-                pdftoppm -jpeg -singlefile -f 1 -l 1 -scale-to-x 800 -- "$file" "${cache_file%.jpg}" 2>/dev/null
-            else
-                ffmpegthumbnailer -i "$file" -o "$cache_file" -c jpeg -s 800 -q 5 2>/dev/null
-            fi
-        fi
-
-        [ -f "$cache_file" ] && exec chafa -s "${w}x${h}" --format=sixel --animate=false -- "$cache_file"
-        exit 0
+    video/*)
+        timeout 20s ffmpegthumbnailer -i "$file" -o /dev/stdout -c jpeg -s 800 -q 5 2>/dev/null |
+            timeout 10s chafa -s "${w}x${h}" --format=sixel --animate=false - 2>/dev/null
+        exit
         ;;
-    application/vnd.openxmlformats-*|application/vnd.oasis.*|application/rtf|application/epub+zip)
-        if command -v pandoc >/dev/null 2>&1; then
-            pandoc -t plain -- "$file" 2>/dev/null | expand | fold -w "$w" | head -n "$h"
-            exit 0
-        fi
+    application/pdf)
+        timeout 20s pdftocairo -jpeg -singlefile -f 1 -l 1 -scale-to 800 -- "$file" - 2>/dev/null |
+            timeout 10s chafa -s "${w}x${h}" --format=sixel --animate=false - 2>/dev/null
+        exit
         ;;
 esac
 
-if [ "${mime%%/*}" = "audio" ] || [ "$encoding" = "binary" ] || [ "$mime" = "application/octet-stream" ]; then
-    file -b -- "$file" | expand | fold -w "$w" | head -n "$h"
-else
-    expand -- "$file" | fold -w "$w" | head -n "$h"
-fi
+case "$mime" in
+    text/*|application/json|application/xhtml+xml|application/xml|application/javascript)
+        text_preview <"$file"
+        ;;
+    *)
+        file -b -- "$file" 2>/dev/null | text_preview
+        ;;
+esac
