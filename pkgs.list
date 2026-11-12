@@ -56,6 +56,7 @@ openai-codex
 openssh
 ouch
 payload-dumper-go
+pipewire-pulse
 poppler
 qemu-base
 qt6ct
@@ -78,6 +79,7 @@ ttyper
 ufw
 usbutils
 virt-manager
+vulkan-radeon
 w3m
 wf-recorder
 wget
