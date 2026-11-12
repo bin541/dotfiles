@@ -64,9 +64,12 @@
 !.config/nvim/lua/config
 !.config/nvim/lua/config/autocmds.lua
 !.config/nvim/lua/config/keymaps.lua
+!.config/nvim/lua/config/lsp.lua
 !.config/nvim/lua/config/options.lua
+!.config/nvim/lua/config/treesitter.lua
 !.config/nvim/lua/plugins
-!.config/nvim/lua/plugins/cmd.lua
+!.config/nvim/lua/plugins/completion.lua
+!.config/nvim/lua/plugins/treesitter.lua
 
 !.config/sway/
 !.config/sway/bar
